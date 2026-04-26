@@ -329,6 +329,15 @@ object ModifierRegistry {
   }
 
   /**
+   * Unregisters a previously registered modifier. No-op if the type is not registered.
+   * Pair with [register] inside `OnCreate`/`OnDestroy` of a module that owns custom modifiers
+   * to avoid leaking factories across module reloads.
+   */
+  fun unregister(type: String) {
+    modifierFactories.remove(type)
+  }
+
+  /**
    * Applies an array of modifier configs to build a Compose Modifier chain.
    */
   @Composable

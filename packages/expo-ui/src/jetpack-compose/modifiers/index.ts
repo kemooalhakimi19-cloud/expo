@@ -3,6 +3,8 @@ import { type ColorValue } from 'react-native';
 import { type AnimatedValue } from './animation';
 import { createModifier, createModifierWithEventListener } from './createModifier';
 export { type ExpoModifier, type ModifierConfig } from '../../types';
+export { createModifier, createModifierWithEventListener } from './createModifier';
+export { createViewModifierEventListener } from './utils';
 export {
   animated,
   spring,
